@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Virtual Coffee Chat — John Adams</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --text: #ffffff;
+    --muted: #9ca3af;
+    --orange: #ff5f1f;
+    --cyan: #00d4ff;
+
+    --chat--color--primary: var(--orange);
+    --chat--color--primary-shade-50: #e0551c;
+    --chat--color--primary--shade-100: #c74a19;
+    --chat--color--secondary: var(--cyan);
+    --chat--color-secondary-shade-50: #00b8dd;
+    --chat--color-white: #151515;
+    --chat--color-light: #1c1c1c;
+    --chat--color-light-shade-50: #262626;
+    --chat--color-light-shade-100: #333333;
+    --chat--color-medium: #3a3a3a;
+    --chat--color-dark: var(--bg);
+    --chat--color-typing: var(--muted);
+
+    --chat--font-family: 'Work Sans', sans-serif;
+
+    --chat--window--width: 100%;
+    --chat--window--height: 100%;
+    --chat--window--border: none;
+    --chat--window--border-radius: 0;
+    --chat--window--margin-bottom: 0;
+
+    --chat--header--background: var(--bg);
+    --chat--header--color: var(--text);
+
+    --chat--body--background: var(--bg);
+
+    --chat--message--bot--background: var(--chat--color-light);
+    --chat--message--bot--color: var(--text);
+    --chat--message--user--background: var(--orange);
+    --chat--message--user--color: #ffffff;
+    --chat--message--border-radius: 14px;
+
+    --chat--input--background: var(--chat--color-light);
+    --chat--input--text-color: var(--text);
+    --chat--input--container--background: var(--chat--color-light);
+    --chat--input--border-radius: 12px;
+
+    --chat--input--send--button--background: transparent;
+    --chat--input--send--button--color: var(--cyan);
+
+    --chat--footer--background: var(--bg);
+    --chat--footer--color: var(--muted);
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    height: 100%;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Work Sans', sans-serif;
+  }
+
+  .page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .brand-bar {
+    padding: 20px 24px 8px;
+    flex-shrink: 0;
+  }
+
+  .brand-bar h1 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin: 0 0 2px;
+    letter-spacing: -0.01em;
+  }
+
+  .brand-bar p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+
+  .quick-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    flex-shrink: 0;
+    width: 100%;
+    text-align: left;
+  }
+
+  .chip {
+    background: #1c1c1c;
+    border: 1px solid #2e2e2e;
+    color: var(--text);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.8rem;
+    padding: 7px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+
+  .chip:hover {
+    border-color: var(--orange);
+    color: var(--orange);
+  }
+
+  .chip.feedback {
+    padding: 7px 11px;
+  }
+
+  .chip.feedback:hover {
+    border-color: var(--cyan);
+    color: var(--cyan);
+  }
+
+  #n8n-chat {
+    flex: 1;
+    min-height: 0;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="brand-bar">
+    <h1>Virtual Coffee Chat</h1>
+    <p>Ask about John's work, or reach out directly below.</p>
+  </div>
+  <div class="quick-actions" id="quick-actions">
+    <button class="chip" data-text="Can I connect with you on LinkedIn?">Connect on LinkedIn</button>
+    <button class="chip" data-text="I'd like to send John a message.">Message John</button>
+    <button class="chip" data-text="I'd like to schedule a call.">Schedule a Call</button>
+    <button class="chip feedback" data-text="👍 That was helpful.">👍</button>
+    <button class="chip feedback" data-text="👎 That wasn't quite what I needed, because: " data-autosend="false">👎</button>
+  </div>
+  <div id="n8n-chat"></div>
+</div>
+
+<script type="module">
+  import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+  const WEBHOOK_URL = 'https://n8n-chat.curiousjohnadams.com/webhook/dfdbc3dd-e9fa-4747-a274-f5c73826c1de/chat';
+  const AUTH_USER = 'JohnA';
+  const AUTH_PASS = 'ACFT2026';
+
+  createChat({
+    webhookUrl: WEBHOOK_URL,
+    mode: 'fullscreen',
+    target: '#n8n-chat',
+    showWelcomeScreen: false,
+    enableStreaming: true,
+    initialMessages: [
+      "Hi there! Welcome to a virtual coffee chat with John. Ask me anything about his work history, skills, or experience."
+    ],
+    i18n: {
+      en: {
+        title: '',
+        subtitle: '',
+        inputPlaceholder: 'Ask a question, or use the buttons above...',
+        getStarted: 'New Conversation',
+        footer: ''
+      }
+    },
+    webhookConfig: {
+      method: 'POST',
+      headers: {
+        Authorization: 'Basic ' + btoa(AUTH_USER + ':' + AUTH_PASS)
+      }
+    }
+  });
+
+  function fillAndSend(text, autosend) {
+    const textarea = document.querySelector('[data-test-id="chat-input"]');
+    if (!textarea) return;
+
+    const nativeSetter = Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype, 'value').set;
+    nativeSetter.call(textarea, text);
+    textarea.dispatchEvent(new Event('input', { bubbles: true }));
+    textarea.dispatchEvent(new Event('change', { bubbles: true }));
+    textarea.focus();
+
+    if (autosend === false) {
+      textarea.setSelectionRange(text.length, text.length);
+      return;
+    }
+
+    let attempts = 0;
+    const tryClick = setInterval(function () {
+      attempts++;
+      const sendBtn = document.querySelector('.chat-input-send-button');
+      if (sendBtn && !sendBtn.disabled) {
+        sendBtn.click();
+        clearInterval(tryClick);
+      } else if (attempts > 20) {
+        clearInterval(tryClick);
+      }
+    }, 100);
+  }
+
+  document.querySelectorAll('.chip').forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      const autosend = chip.getAttribute('data-autosend') !== 'false';
+      fillAndSend(chip.getAttribute('data-text'), autosend);
+    });
+  });
+
+  function relocateChips() {
+    const container = document.getElementById('n8n-chat');
+    const textarea = container.querySelector('textarea');
+    const chips = document.getElementById('quick-actions');
+    if (!textarea || !chips) return false;
+
+    let inputBar = textarea;
+    while (inputBar.parentElement && inputBar.parentElement !== container && !/input/i.test(inputBar.parentElement.className || '')) {
+      inputBar = inputBar.parentElement;
+    }
+    const target = (inputBar.parentElement && /input/i.test(inputBar.parentElement.className || ''))
+      ? inputBar.parentElement
+      : textarea.parentElement;
+
+    if (target && target.parentElement) {
+      target.parentElement.insertBefore(chips, target);
+      return true;
+    }
+    return false;
+  }
+
+  const chipObserver = new MutationObserver(function () {
+    if (relocateChips()) chipObserver.disconnect();
+  });
+  chipObserver.observe(document.getElementById('n8n-chat'), { childList: true, subtree: true });
+</script>
+</body>
+</html>

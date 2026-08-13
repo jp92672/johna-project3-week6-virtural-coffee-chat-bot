@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Course material, not project deliverables
+Course Files/
+Example Files/
+Outputs/
+reference/
+session_notes/
+
+# Secrets and logs
+.env
+*.csv

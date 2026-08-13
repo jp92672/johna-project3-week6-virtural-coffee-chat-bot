@@ -1,0 +1,494 @@
+{
+  "name": "Virtural Coffee Chat Bot (RAG Flow)",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {
+          "dimensions": 512
+        }
+      },
+      "id": "ce5e7f04-0390-4d3d-82af-c8ef9e8d7226",
+      "name": "OpenAI Embeddings",
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        608,
+        272
+      ],
+      "retryOnFail": true,
+      "waitBetweenTries": 3000,
+      "notesInFlow": true,
+      "credentials": {
+        "openAiApi": {
+          "id": "zqDmAKWUMjvb8eb5",
+          "name": "OpenAI account"
+        }
+      },
+      "notes": "This node generates embeddings (text-embedding-3-small, 512 dimensions) for narrative KB chunks before storing in Pinecone."
+    },
+    {
+      "parameters": {
+        "dataType": "binary",
+        "textSplittingMode": "custom",
+        "options": {
+          "metadata": {
+            "metadataValues": [
+              {
+                "name": "source_type",
+                "value": "narrative"
+              }
+            ]
+          }
+        }
+      },
+      "id": "e12c173a-bb9b-4f0a-8f76-115159db5107",
+      "name": "Document Loader",
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1.1,
+      "position": [
+        736,
+        272
+      ],
+      "notesInFlow": true,
+      "notes": "This node loads the narrative KB documents and tags them with source_type: narrative before chunking."
+    },
+    {
+      "parameters": {
+        "chunkOverlap": 100,
+        "options": {}
+      },
+      "id": "f17f8a72-6407-43ed-b3a7-d083fc1b2a4b",
+      "name": "Text Splitter",
+      "type": "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+      "typeVersion": 1,
+      "position": [
+        736,
+        432
+      ],
+      "notesInFlow": true,
+      "notes": "This node splits narrative KB documents into chunks (size 1000, overlap 100) before embedding."
+    },
+    {
+      "parameters": {
+        "fileSelector": "/data/project/kb/**/*.md",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1.1,
+      "position": [
+        -240,
+        -208
+      ],
+      "id": "d5a82e8f-1fa1-408d-a023-0063d11517ae",
+      "name": "Read Files from KBs",
+      "notesInFlow": true,
+      "notes": "This node reads the files in the Knowledge Base folders"
+    },
+    {
+      "parameters": {
+        "options": {
+          "dimensions": 512
+        }
+      },
+      "id": "f8b62b8a-e3ef-4011-83c1-042525e7fd79",
+      "name": "OpenAI Embeddings1",
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        608,
+        -288
+      ],
+      "retryOnFail": true,
+      "waitBetweenTries": 3000,
+      "notesInFlow": true,
+      "credentials": {
+        "openAiApi": {
+          "id": "zqDmAKWUMjvb8eb5",
+          "name": "OpenAI account"
+        }
+      },
+      "notes": "This node generates embeddings (text-embedding-3-small, 512 dimensions) for facts KB chunks before storing in Pinecone."
+    },
+    {
+      "parameters": {
+        "dataType": "binary",
+        "textSplittingMode": "custom",
+        "options": {
+          "metadata": {
+            "metadataValues": [
+              {
+                "name": "source_type",
+                "value": "facts"
+              }
+            ]
+          }
+        }
+      },
+      "id": "57b60ddb-c997-4753-8acb-7e2b1aafab39",
+      "name": "Document Loader1",
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1.1,
+      "position": [
+        736,
+        -288
+      ],
+      "notesInFlow": true,
+      "notes": "This node loads the narrative KB documents and tags them with source_type: facts before chunking."
+    },
+    {
+      "parameters": {
+        "chunkSize": 500,
+        "chunkOverlap": 100,
+        "options": {}
+      },
+      "id": "ce9881fc-fe06-4700-b09f-21b36dd04274",
+      "name": "Text Splitter1",
+      "type": "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+      "typeVersion": 1,
+      "position": [
+        736,
+        -128
+      ],
+      "notesInFlow": true,
+      "notes": "This node splits facts KB documents into chunks (size 500, overlap 100) before embedding."
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "pineconeIndex": {
+          "__rl": true,
+          "value": "curious-john",
+          "mode": "list",
+          "cachedResultName": "curious-john"
+        },
+        "options": {}
+      },
+      "id": "9bf58286-cd5a-4d4e-af08-878256ec126d",
+      "name": "Store Facts KB in Pinecone",
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1.3,
+      "position": [
+        608,
+        -480
+      ],
+      "notesInFlow": true,
+      "credentials": {
+        "pineconeApi": {
+          "id": "6lcg1ttX99kIPBqs",
+          "name": "Pinecone account"
+        }
+      },
+      "notes": "This node stores the embedded chunks from the Facts KB in the Pinecone index."
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "pineconeIndex": {
+          "__rl": true,
+          "value": "curious-john",
+          "mode": "list",
+          "cachedResultName": "curious-john"
+        },
+        "options": {}
+      },
+      "id": "3cc667fc-ed61-4cd0-8e7e-6ce3b07bc635",
+      "name": "Store Narrative KB in Pinecone",
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1.3,
+      "position": [
+        608,
+        80
+      ],
+      "notesInFlow": true,
+      "credentials": {
+        "pineconeApi": {
+          "id": "6lcg1ttX99kIPBqs",
+          "name": "Pinecone account"
+        }
+      },
+      "notes": "This node stores the embedded chunks from the Narrative KB in the Pinecone index."
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://curious-john-b5bhqpx.svc.aped-4627-b74a.pinecone.io/vectors/delete",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "pineconeApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"deleteAll\": true}",
+        "options": {
+          "response": {
+            "response": {
+              "neverError": true
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        -64,
+        48
+      ],
+      "id": "d299896c-4266-4080-9b90-a6ddd8410c8c",
+      "name": "Clear Pinecone Index",
+      "notesInFlow": true,
+      "retryOnFail": false,
+      "waitBetweenTries": 3000,
+      "alwaysOutputData": false,
+      "credentials": {
+        "pineconeApi": {
+          "id": "6lcg1ttX99kIPBqs",
+          "name": "Pinecone account"
+        }
+      },
+      "notes": "This node clears the Pinecone index to avoid duplicates."
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{$binary.data.directory}}",
+                    "rightValue": "facts",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    },
+                    "id": "4fe5120e-5977-475a-9608-edc5d363e88e"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "ecbc8a63-4bb8-4957-bbbc-e246b6b7380b",
+                    "leftValue": "={{$binary.data.directory}}",
+                    "rightValue": "narrative",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        304,
+        -192
+      ],
+      "id": "d38ca69b-3f9f-451a-9cc8-edf6985b8c61",
+      "name": "Route KBs for Chunking",
+      "notesInFlow": true,
+      "notes": "This Splitter routes the documents to different store in Pinecone nodes for different chunking parameters."
+    },
+    {
+      "parameters": {
+        "mode": "chooseBranch"
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        96,
+        -192
+      ],
+      "id": "cfff645b-cec7-4650-9cf2-db527f47de96",
+      "name": "Exlude Clear Index Data",
+      "notes": "When a Pinecone index namespace has no records a 404 error is returned. This node will exclude any 404 error or blank data coming from the Clear Index node."
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -480,
+        -208
+      ],
+      "id": "1f130bb8-57e7-4f33-8203-0ebc298c0b3c",
+      "name": "When clicking ‘Execute workflow’",
+      "notesInFlow": true,
+      "notes": "For the POC we will use a manual trigger until moved into MVP/Beta phase where we can add either scheduler or have a listener on a folder."
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "OpenAI Embeddings": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Store Narrative KB in Pinecone",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Document Loader": {
+      "ai_document": [
+        [
+          {
+            "node": "Store Narrative KB in Pinecone",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Text Splitter": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "Document Loader",
+            "type": "ai_textSplitter",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Files from KBs": {
+      "main": [
+        [
+          {
+            "node": "Exlude Clear Index Data",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Clear Pinecone Index",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Embeddings1": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Store Facts KB in Pinecone",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Document Loader1": {
+      "ai_document": [
+        [
+          {
+            "node": "Store Facts KB in Pinecone",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Text Splitter1": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "Document Loader1",
+            "type": "ai_textSplitter",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Clear Pinecone Index": {
+      "main": [
+        [
+          {
+            "node": "Exlude Clear Index Data",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Route KBs for Chunking": {
+      "main": [
+        [
+          {
+            "node": "Store Facts KB in Pinecone",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Store Narrative KB in Pinecone",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Exlude Clear Index Data": {
+      "main": [
+        [
+          {
+            "node": "Route KBs for Chunking",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Read Files from KBs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": true,
+    "timeSavedMode": "fixed",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "qLkxfBDOQ0Hvb3yH"
+  },
+  "versionId": "99959a3a-d8d0-4f98-93bd-04e89bf94b35",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "aiBuilderAssisted": true,
+    "builderVariant": "mcp",
+    "instanceId": "e7f7cfd44b372389b07ad59ca92f3d77e5adf0833c46e69bac548b8cca1fe064"
+  },
+  "nodeGroups": [],
+  "id": "7k8YFZS6rnb66MXN",
+  "tags": []
+}
