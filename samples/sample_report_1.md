@@ -8,6 +8,20 @@ Unedited output from the `chat_log` Data Table. Personal email addresses and the
 
 ---
 
+## Raw log structure (first 3 rows, answers truncated)
+
+| session_id | question | answer | rating | feedback_reason |
+|---|---|---|---|---|
+| 2c528c72… | Can you tell me if John worked at URBANARA and one of his remits there? | Yes. According to the documents I retrieved… | null | null |
+| 2c528c72… | Can you tell me if John worked at Also and one of his remits there? | I don't have that information in what I've been given… | null | null |
+| 2c528c72… | What about Cloudflare? | According to the documents I retrieved… | null | null |
+
+Every turn is logged. `rating` and `feedback_reason` are only populated when the user submits thumbs up/down — two examples appear later in this session.
+
+---
+
+## Conversation
+
 **Q:** Can you tell me if John worked at URBANARA and one of his remits there?
 
 **A:** Yes. According to the documents I retrieved:
@@ -118,7 +132,7 @@ Was this helpful?
 - Attendee name/email: Test Name4 / [REDACTED_EMAIL]  
 - When (California / PDT): Friday, Aug 14 at 6:00 AM  
 - Duration: 30 minutes  
-- Cancel or reschedule: https://calendly.com/cancellations/fc6fd798-b4e8-4637-a5ba-db9760b28d74
+- Cancel or reschedule: https://calendly.com/cancellations/[REDACTED]
 
 Would you like me to add anything to the message to John before the call or send a calendar invite to another address? 
 
