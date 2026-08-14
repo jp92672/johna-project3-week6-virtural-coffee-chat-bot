@@ -1,10 +1,4 @@
-# Career Story and Projects – Narrative
-**Type:** narrative
-**Source:** Written for this knowledge base from verified sources: `Career Profile 2026/CVs/cv_adams_2026.pdf`, `cv_adams_mission driven.pdf`, the five cover letters in `Career Profile 2026/Companies/`, and John's own corrections in session. Every date, title, headcount, and metric traces to those documents.
-**Relationship to other files:** This is the story. `kb/facts/cv_content.md` holds the hard facts, and `kb/narrative/cover_letters.md` holds the voice reference. If this file and the facts file ever disagree, the facts file wins and this one needs fixing.
-**Status:** Rebuilt 2026-08-07. Copy edited after John's review. Ironhack bootcamp paragraph added to "Where I Am Now" and flagged for review.
-
----
+# Career Story and Projects
 
 ## The Shape of the Career
 
@@ -106,7 +100,7 @@ Most of what I did that first year was understanding the business and team needs
 
 I led the brand refresh RFP and the agency selection, working with senior and executive leadership on direction and feedback for the positioning and identity work. Then I translated that refresh into the digital experience through a full website redesign and a replatform onto Adobe Experience Manager, which came out at 10% year on year traffic growth and a 3% conversion rate. And we consolidated the country-specific domains into a single .com property supporting six languages, which delivered significant SEO gains and meant the brand finally looked like one company across its core markets.
 
-**Head of Corporate Marketing (September 2024 to August 2025).** I stepped up to lead brand, design, content, digital experience, and corporate communications, reporting to the VP of Marketing, who reported to the CRO. There was no CMO. I ran a €1.2M budget across a 13-person multi-functional team, through the middle of the repositioning and the growth phase, with a real contribution toward Lucanet's €200M ARR milestone.
+**Head of Corporate Marketing (September 2024 to August 2025).** I stepped up to lead brand, design, content, digital experience, and corporate communications, reporting to the VP of Marketing, who reported to the CRO. There was no CMO. I ran a €1.2M budget across a 13-person multi-functional team, through the middle of the repositioning and the growth phase, with a real contribution toward Lucanet's ARR milestone (€100M → €200M).
 
 The shift here was from owning the web to owning reputation, which was a real step up in scope. On communications I directed our PR agency engagements and the external communications strategy, which secured over 4M media reach in publications including Bloomberg, CFO.com, Handelsblatt, and Treasury Today, lifted share of voice by 30%, and got our executives into conversations worth being in. I championed the content marketing strategy behind our flagship industry report, and gave direction on the analyst reports we produced with BARC and IDC, which the team co-authored. The team launched the corporate podcast and coordinated executive speaking engagements. The social side, including the LinkedIn growth to over 50K followers, was a big milestone. This was the outcome of moving from a reactive function to building a center of excellence that drove its strategy tied to business outcomes.
 
@@ -122,7 +116,7 @@ Since leaving Lucanet in August 2025 I have been deliberate about what comes nex
 
 Most of that has been learning and building with AI as a development partner. I have applications running on a Raspberry Pi at home, because I wanted to understand how the tools work. Same instinct as taking apart telephones as a kid.
 
-Since July I have been doing Ironhack's AI Consulting and Integration bootcamp, running from 6 July to 4 September 2026. It covers the practical stack rather than the theory: Python and the OpenAI API, prompt engineering, RAG with chunking, embeddings and vector databases, LangChain and LangGraph, agent design and context engineering, and n8n for workflow orchestration. The part I have found most useful is the consulting framing, working out whether a problem needs AI at all and which approach actually fits, instead of reaching for the biggest tool available. This knowledge base is part of that. The assistant you are talking to is my course project.
+Since July I have been doing Ironhack's AI Consulting and Integration bootcamp, running from 6 July to 4 September 2026. It covers the practical stack rather than the theory: Python and the OpenAI API, prompt engineering, RAG with chunking, embeddings and vector databases, LangChain and LangGraph, agent design and context engineering, and n8n for workflow orchestration. The part I have found most useful is the consulting framing, working out whether a problem needs AI at all and which approach actually fits, instead of reaching for the biggest tool available. The assistant you are talking to is my project for that course.
 
 The other thing I have been doing is reading and listening my way properly into the blue economy. It started with growing up next to the ocean and surfing in it, then a book, *Eat Like a Fish* by Bren Smith, which turned a general interest into something closer to a wake-up call, and then a lot of podcasts. Kelp farming, ocean restoration, and the businesses being built around them. It is the direction that is pulling on me the most.
 

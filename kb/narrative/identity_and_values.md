@@ -1,9 +1,4 @@
-# Identity and Values – Narrative
-**Type:** narrative
-**Source:** Rebuilt 2026-08-07 from the five real cover letters in `Career Profile 2026/Companies/`, both CVs, the CliftonStrengths results, and John's own corrections in session.
-**Status:** Reviewed by John 2026-08-07. US English. Social Proof section removed for now; add quotes later if wanted.
-
----
+# Identity and Values
 
 ## Identity
 

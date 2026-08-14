@@ -248,6 +248,27 @@
     if (relocateChips()) chipObserver.disconnect();
   });
   chipObserver.observe(document.getElementById('n8n-chat'), { childList: true, subtree: true });
+
+  const BZZT_MESSAGE = "🤖 Bzzt! I'm having a technical issue completing that right now. This error has been recorded and a notification has been sent so it can be looked into. If we are unable to move forward, please email John directly at info@curiousjohnadams.com.";
+
+  function patchFailedResponseText(node) {
+    if (node.nodeType !== 1) return;
+    if (!node.textContent || !node.textContent.includes('No response received')) return;
+    const walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT);
+    let textNode;
+    while ((textNode = walker.nextNode())) {
+      if (textNode.textContent.includes('No response received')) {
+        textNode.textContent = BZZT_MESSAGE;
+      }
+    }
+  }
+
+  const errorObserver = new MutationObserver(function (mutations) {
+    mutations.forEach(function (m) {
+      m.addedNodes.forEach(patchFailedResponseText);
+    });
+  });
+  errorObserver.observe(document.getElementById('n8n-chat'), { childList: true, subtree: true });
 </script>
 </body>
 </html>

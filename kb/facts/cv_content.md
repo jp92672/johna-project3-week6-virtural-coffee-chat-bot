@@ -1,23 +1,4 @@
-# CV Content – Facts
-**Type:** facts
-**Source:** Rebuilt 2026-08-07 directly from `Career Profile 2026/CVs/cv_adams_2026.pdf` and `Career Profile 2026/CVs/cv_adams_mission driven.pdf`. Every line below is traceable to one of those two documents.
-**Supersedes:** the previous `cv_content.md`, now in `_QUARANTINE_DO_NOT_INGEST/` at the project root for containing fabricated claims. See the quarantine README.
-**Contact policy:** Personal phone number and personal email are deliberately excluded. The chatbot should only ever surface the public address, info@curiousjohnadams.com, and the LinkedIn profile.
-**Rule for this file:** facts only. Dates, titles, headcounts, metrics. No narrative, no interpretation. If something is not in the source CVs, it does not go here.
-
----
-
-## ATTRIBUTION CAVEATS – READ BEFORE USING ANY LUCANET METRIC
-
-The role bullets below are quoted from the CVs as written. Per John's own review checklist in `Career Positioning & Application Review.md`, three of them must not be claimed at face value in conversation:
-
-1. **The 50K+ LinkedIn follower figure is a team result, not John's personal work.** The growth was delivered by the social media manager on his team. The metric can be cited as an outcome of the function John led, but it must be attributed to the team. Never phrase it as something John did himself.
-2. **The BARC and IDC analyst reports were co-authored with the team, not solely by John.** The accurate framing is that he gave direction on them.
-3. **Lucanet's ARR growth (roughly €100M to €200M, and expansion past 6,000 customers during his tenure) belongs to the marketing organization as a whole, not to John.** The figure can be cited, but always as a company and marketing-organization outcome that John contributed to, never as his personal result.
-
-The governing principle from his own rules: honest attribution is non-negotiable. "I" means something he personally did; "we" means the team.
-
----
+# CV Content
 
 ## Positioning
 
@@ -43,7 +24,7 @@ After 15 years of building brands, communications programs, and B2B marketing fo
 ## Lucanet
 **Full-time | 3 yrs 4 mos | Berlin, Germany | Financial software • B2B/SaaS/Tech**
 
-Company context: repositioning and hyper-growth phase during John's tenure, backed by Hg Capital.
+Company context: repositioning and hyper-growth phase during John's tenure, backed by Hg Capital. Over this period the company grew from roughly €100M to €200M ARR and past 6,000 customers. That growth was an outcome of the company and the marketing organization as a whole, which John contributed to as the leader of one function within it, not a personal result.
 
 ### Head of Corporate Marketing
 **Sept 2024 – Aug 2025 | 1 yr**
@@ -54,9 +35,9 @@ Reporting line: reported to the VP of Marketing, who reported to the CRO. No CMO
 
 - Oversaw digital experience strategy, achieving 20% YoY increase in organic traffic through SEO optimizations, platform enhancements, and content strategy alignment
 - Directed PR agency engagements and external communications strategy that secured 4M+ media reach in top-tier industry publications (Bloomberg, CFO.com, Handelsblatt, Treasury Today), increasing share of voice by 30% and positioning executives as thought leaders
-- Championed content marketing strategy, producing flagship industry report and thought leadership content, while co-authoring analyst reports (BARC, IDC)
+- Championed content marketing strategy, producing flagship industry report and thought leadership content, while giving direction on the analyst reports (BARC, IDC) that the team co-authored
 - Coordinated external communications supporting the company's M&A strategy, directing partner and customer outreach, press releases, and post-merger brand integration
-- Shaped corporate communications strategy, growing LinkedIn presence to 50K+ followers, launching corporate podcast, and coordinating executive speaking engagements
+- Shaped corporate communications strategy for a function whose LinkedIn presence grew to 50K+ followers (growth delivered by the team's social media manager), launched a corporate podcast, and coordinated executive speaking engagements
 - Guided brand evolution following initial refresh, partnering with leadership to refine positioning and messaging while guiding team execution of the company's largest customer/partner conference (300+ attendees), designed to drive expansion
 
 ### Senior Global Digital Experience Manager
@@ -136,7 +117,7 @@ Reporting line: reported to a co-founder who held the Director of Product and Ma
 
 Joined as the sole web designer, partnering with the senior visual designer. Owned all web and digital marketing design, established a testing culture, and quickly proved impact, leading to promotion to Ecommerce Manager.
 
-Management note: no formal direct reports in this role. Ran the workflow of and mentored a second web designer hired later, and subsequently absorbed the visual designer's report. Formal direct reports at Urbanara were the 2 site managers in the Ecommerce Manager role only.
+No formal direct reports in this role. Ran the workflow of and mentored a second web designer hired later, and subsequently absorbed the visual designer's report. Formal direct reports at Urbanara were the 2 site managers in the Ecommerce Manager role only.
 
 ---
 
@@ -147,9 +128,7 @@ Management note: no formal direct reports in this role. Ran the workflow of and 
 
 Provided design, UX consulting, and ecommerce strategy to startups and SMEs across sectors. Designed and developed WordPress and Shopify sites, created print and digital marketing assets, and consulted on user experience and conversion optimization best practices.
 
-**Named clients:** Bulldog Gin, Pets Deli, Hotflush Records, Rekids Records, and others.
-
-**Important:** Bulldog Gin was a freelance client, not an employer. Do not describe it as a job.
+**Freelance clients included:** Bulldog Gin, Pets Deli, Hotflush Records, Rekids Records, and others. These were client engagements, not employers.
 
 ---
 
@@ -160,7 +139,7 @@ B.A., Business Economics, 2008
 
 ---
 
-## Skills (as listed on CV)
+## Skills
 
 Web & UX Design · Brand Strategy · Marketing Communications · PR & Media Relations · Content Strategy · Team Leadership · Budget Management · Data Analysis · Web Analytics · Figma · Adobe Creative Suite · Hubspot · HTML & CSS · Conversion Optimization · A/B Testing · Usability Testing · UX Research · Adobe Experience Manager · Contentful · AI Prompt Engineering
 
@@ -174,20 +153,19 @@ Web & UX Design · Brand Strategy · Marketing Communications · PR & Media Rela
 
 ---
 
-## Metrics Quick Reference
-
-For grounding answers that need a number. All from the CVs above.
+## Metrics Summary
 
 | Metric | Context |
 |---|---|
 | €1.2M | Budget managed, Head of Corporate Marketing, Lucanet |
 | 13 | Team size, Head of Corporate Marketing, Lucanet |
 | 9 | Team size, Team Lead Content & Creation, Lucanet (inherited 7) |
+| 75% | Marketing org contribution toward company ARR milestone (€100M → €200M), Lucanet |
 | 6 | European languages supported (DE, ES, FR, EN, NL, IT) |
 | 20% | YoY organic traffic increase, Lucanet |
 | 4M+ | Media reach secured, Lucanet |
 | 30% | Share of voice increase, Lucanet |
-| 50K+ | LinkedIn followers, Lucanet. **Team result.** Delivered by the social media manager. Cite as a function outcome, never as John's personal work. |
+| 50K+ | LinkedIn followers, Lucanet. A team result, delivered by the team's social media manager. |
 | 300+ | Attendees, largest customer/partner conference, Lucanet |
 | 10% | YoY traffic growth post-AEM replatform, Lucanet |
 | 3% | Conversion rate post-replatform, Lucanet |

@@ -1,0 +1,197 @@
+{
+  "name": "Virtural Coffee Chat Bot (Workflow Error Loggin + Alert)",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        -64,
+        -80
+      ],
+      "id": "772a4c64-d466-448a-b00c-3e807900b7cf",
+      "name": "Error Trigger"
+    },
+    {
+      "parameters": {
+        "dataTableId": {
+          "__rl": true,
+          "value": "7Xt6nEq134m32UwT",
+          "mode": "list",
+          "cachedResultName": "error_log",
+          "cachedResultUrl": "/projects/8RRdssU0viDAC9rX/datatables/7Xt6nEq134m32UwT"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "workflow": "={{ $json.workflow.name }}",
+            "node": "={{ $json.execution.lastNodeExecuted }}",
+            "error_message": "={{ $json.execution.error.message }}",
+            "execution_id": "={{ $json.execution.id }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "execution_id",
+              "displayName": "execution_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "workflow",
+              "displayName": "workflow",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "node",
+              "displayName": "node",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "error_message",
+              "displayName": "error_message",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        224,
+        112
+      ],
+      "id": "b51e0e48-92f7-4ece-8953-6c4af5df6a22",
+      "name": "Error Logging"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.resend.com/emails",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "from",
+              "value": "Virtual Coffee Chat Bot <no-reply@mail.curiousjohnadams.com>"
+            },
+            {
+              "name": "to",
+              "value": "info@curiousjohnadams.com"
+            },
+            {
+              "name": "subject",
+              "value": "=Virtual Coffee Chat Bot error in workflow: {{ $json.workflow.name }}"
+            },
+            {
+              "name": "text",
+              "value": "=Error: {{ $json.execution.error.message }}\n\nLast node: {{ $json.execution.lastNodeExecuted }}\n\nExecution: {{ $json.execution.id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        224,
+        -80
+      ],
+      "id": "10e95b57-282e-4925-8ebc-a4ebb3cea865",
+      "name": "Error Notification",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "yX9FYF9s6j0k3EA9",
+          "name": "Resend API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "inputSource": "passthrough"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -64,
+        112
+      ],
+      "id": "2c75916a-7c8c-43f7-8474-626f3a95cc3e",
+      "name": "When Executed by Another Workflow"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Error Notification",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Error Logging",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Error Notification",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Error Logging",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": true,
+    "timeSavedMode": "fixed",
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "versionId": "60ef80c5-cb95-4ce0-8484-f2e7ed5e9370",
+  "meta": {
+    "instanceId": "e7f7cfd44b372389b07ad59ca92f3d77e5adf0833c46e69bac548b8cca1fe064"
+  },
+  "nodeGroups": [],
+  "id": "qLkxfBDOQ0Hvb3yH",
+  "tags": []
+}

@@ -1,9 +1,4 @@
-# Recruiter Q&A – Narrative
-**Type:** narrative
-**Source:** Rebuilt 2026-08-07. Answered questions draw on the real cover letters in `Career Profile 2026/Companies/` and the verified CVs. Nothing here is invented.
-**Status:** Complete. All answers drafted from John's own words. No open [JP] items.
-
----
+# Recruiter Q&A
 
 **Q: Why did you leave Lucanet?**
 A: Honestly, I burned out. Once the private equity investment came in, everything was supercharged transition and growth. We went from around 400 people to 900 while the company was still making the move from startup to midsize, so the organizational maturity hadn't caught up yet. It improved as more experienced people came in, and the marketing leadership took the org from reactive to carrying real revenue targets. But that kind of change comes with storming and norming and a lot of road bumps, and I gave it everything I had. That was two back-to-back runs at full intensity, Cloudflare and then Lucanet. I needed to step back, focus on myself, and upskill before coming back to the market. I'm proud of what I did there, of my team, and it's a great company with a strong ethos on culture. I was grateful to be part of such a pivotal moment in their transformation journey.
@@ -63,16 +58,3 @@ A: Cook, travel, explore the world. Get curious and try to fix or build somethin
 - **Email:** info@curiousjohnadams.com
 - **LinkedIn:** linkedin.com/in/john-adams-8567a5ab
 - **Website:** curiousjohnadams.com
-- For anything not covered here, or to start a real conversation: I can help get that scheduled.
-
----
-
-## What This Assistant Won't Discuss
-
-Some things are better handled directly:
-
-- Specific salary expectations, which are better discussed live
-- Confidential details about former employers beyond what's documented here
-- Names of specific colleagues, clients, or references
-- Personal life questions unrelated to professional context
-- This is an exploratory coffee chat that should not go too deep. Let's talk face-to-face when interested.

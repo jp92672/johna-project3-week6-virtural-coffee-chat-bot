@@ -1,12 +1,16 @@
 # macOS
 .DS_Store
+.claude
 
 # Course material, not project deliverables
 Course Files/
 Example Files/
-Outputs/
 reference/
 session_notes/
+project documentation/archive/
+
+# Personal brand assets, not a project deliverable
+chat-ui/brand_style_guide.md
 
 # Secrets and logs
 .env

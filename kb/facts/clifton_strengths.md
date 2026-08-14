@@ -1,24 +1,12 @@
-# CliftonStrengths Results – Facts
-**Type:** facts
-**Source:** Transcribed verbatim from `Clifton Strength Finder_Signature Theme Report_2024.pdf` and `Clifton Strength Finder_Top 5_2024.pdf` (Gallup, respondent John Adams, ID 97741560).
-**Survey completion date:** 10-14-2024
-**Rule for this file:** Gallup's exact wording only. No paraphrase, no interpretation, no themes beyond the verified top five.
+# CliftonStrengths Results
 
----
-
-## IMPORTANT: what was wrong before, and why
-
-The previous version of this file listed themes 6 to 10 as Focus, Maximizer, Learner, Achiever, and Responsibility, and claimed in an "Overall Profile" section that John leads with Influencing themes (Significance, Maximizer, Self-Assurance, Competition).
-
-**None of that is John's data.** It was lifted from `Clifton Strength Finder_34 Results_SAMPLE_2024.pdf`, which is Gallup's demonstration report for a fictional respondent named **DONALD CLIFTON, dated 12-30-1999**. That sample report's rank order is Significance, Futuristic, Individualization, Focus, Maximizer, Strategic, Learner, Achiever, Responsibility, Belief. The old file had copied the sample's ranks 4 through 9 and presented them as John's.
-
-**John's themes 6 to 10 are not known.** No full 34 report for John exists in the source files. Do not state them. If asked, the honest answer is that only the top five have been assessed and shared.
+John completed Gallup's CliftonStrengths assessment in October 2024. The assessment reported his top five signature themes; themes beyond the top five were not part of the results.
 
 ---
 
 ## Top 5 Signature Themes
 
-In rank order, as revealed by the assessment.
+In rank order, as reported by the assessment.
 
 1. **Relator** (Relationship Building)
 2. **Ideation** (Strategic Thinking)
@@ -28,7 +16,7 @@ In rank order, as revealed by the assessment.
 
 ---
 
-## Gallup's short descriptors (verbatim, Top 5 report)
+## Gallup's short descriptors
 
 **1. Relator®**
 > You enjoy close relationships with others. You find deep satisfaction in working hard with friends to achieve a goal.
@@ -47,7 +35,7 @@ In rank order, as revealed by the assessment.
 
 ---
 
-## How the top five blend (verbatim, Top 5 report)
+## How the top five blend
 
 **Relator + Ideation:** While you are socially selective and prefer to deepen existing relationships, your mind is open and willing to create new experiences.
 
@@ -63,9 +51,9 @@ In rank order, as revealed by the assessment.
 
 ---
 
-## Selected personalised insights (verbatim, Top 5 report)
+## Selected personalised insights
 
-Gallup generates these specifically from John's responses. Useful because they are more specific than the generic theme descriptions.
+Gallup generates these specifically from John's own responses.
 
 **On Relator:**
 > Because of your strengths, you tend to form communities. You bring people into your network, give them opportunities to know each other, and build a group of lifelong friends who show up for each other when it matters most.
@@ -79,7 +67,7 @@ Gallup generates these specifically from John's responses. Useful because they a
 
 ---
 
-## Full theme descriptions (verbatim, Signature Theme Report)
+## Full theme descriptions
 
 **Relator®**
 > Relator describes your attitude toward your relationships. In simple terms, the Relator theme pulls you toward people you already know. You do not necessarily shy away from meeting new people, in fact, you may have other themes that cause you to enjoy the thrill of turning strangers into friends, but you do derive a great deal of pleasure and strength from being around your close friends. You are comfortable with intimacy. Once the initial connection has been made, you deliberately encourage a deepening of the relationship. You want to understand their feelings, their goals, their fears, and their dreams; and you want them to understand yours. You know that this kind of closeness implies a certain amount of risk, you might be taken advantage of, but you are willing to accept that risk. For you a relationship has value only if it is genuine. And the only way to know that is to entrust yourself to the other person. The more you share with each other, the more you risk together. The more you risk together, the more each of you proves your caring is genuine. These are your steps toward real friendship, and you take them willingly.
@@ -98,14 +86,8 @@ Gallup generates these specifically from John's responses. Useful because they a
 
 ---
 
-## Also on file
+## Other assessments
 
-**MBTI:** ENFP (per `Career Positioning & Application Review.md`)
+**MBTI:** ENFP
 
-## How this should be used in conversation
-
-The chatbot should not read Gallup's descriptions aloud. John's own plain-English version, in `kb/narrative/identity_and_values.md`, is the better answer:
-
-> I build deep relationships, connect ideas that don't obviously belong together, notice what makes each person different, ask a lot of questions, and see patterns where others see mess.
-
-This file is grounding reference, so the assistant can be accurate if pressed on specifics. Never claim a theme outside the verified top five.
+---
